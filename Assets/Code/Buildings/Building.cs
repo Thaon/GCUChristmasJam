@@ -6,7 +6,9 @@ public class Building : MonoBehaviour {
 
     #region member variables
 
+    [SerializeField]
     public List<Requirement> m_requirements;
+    [SerializeField]
     public List<Operation> m_operations;
 
     private Inventory m_inventory;
@@ -36,27 +38,13 @@ public class Building : MonoBehaviour {
 
 //Secondary utility classes----------------------------------
 
-public class Requirement : Behaviour
-{
-    public Inventory m_requirements;
-
-    public bool CheckRequirements(Inventory inv)
-    {
-        foreach (Item itm in m_requirements.m_contents)
-        {
-            if (inv.CheckItemQuantity(itm.m_name) < itm.m_quantity)
-                return false;
-        }
-        return true;
-    }
-}
-
-public abstract class Effect : Behaviour
+public abstract class Effect : MonoBehaviour
 {
     public abstract void Activate();
 }
 
-public class Operation : Behaviour
+[System.Serializable]
+public class Operation : MonoBehaviour
 {
     public float m_timeToComplete;
     public List<Effect> m_effects;
