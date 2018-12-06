@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Building : MonoBehaviour {
+public class BuildingsManager : MonoBehaviour {
 
     #region member variables
 
+    public GameObject[] m_buildingsPrefabs;
 
     #endregion
 
-    void Start ()
+    void Start()
     {
-		
-	}
-	
-	void Update ()
+
+    }
+
+    void Update()
     {
-		
-	}
+
+    }
 }
