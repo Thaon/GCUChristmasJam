@@ -14,7 +14,7 @@ public class BuildingVisualizer : MonoBehaviour {
 
     private void Start()
     {
-        m_mat = GetComponent<MeshRenderer>().sharedMaterial;
+        m_mat = GetComponentInChildren<MeshRenderer>().sharedMaterial;
     }
 
     void Update ()
@@ -28,6 +28,6 @@ public class BuildingVisualizer : MonoBehaviour {
 
     public void BuildConcreteVersion()
     {
-        Instantiate(m_concreteVersion);
+        Instantiate(m_concreteVersion, transform.position, transform.rotation);
     }
 }

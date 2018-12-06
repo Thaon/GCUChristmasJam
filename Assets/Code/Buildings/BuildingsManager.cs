@@ -30,10 +30,31 @@ public class BuildingsManager : MonoBehaviour {
         //spawn building
         if (Input.GetMouseButtonDown(0))
         {
+            //check collisions
+            Vector3 pos1 = m_activeSelection.transform.position;
+            pos1.y = 0;
+
+            Collider[] buildingsInArea = Physics.OverlapSphere(m_activeSelection.transform.position, 10);
+
+            if (buildingsInArea.Length != 0)
+                return;
+
+            //spawn if have resources
             if (m_pData.m_presentsProduced >= m_buildingsPrefabs[m_selectedBuilding].m_price)
             {
                 m_pData.m_presentsProduced -= m_buildingsPrefabs[m_selectedBuilding].m_price;
                 m_activeSelection.GetComponent<BuildingVisualizer>().BuildConcreteVersion();
+            }
+        }
+
+        //deselect building
+        if (Input.GetMouseButtonDown(1))
+        {
+            m_selectedBuilding = -1;
+            if (m_activeSelection != null)
+            {
+                Destroy(m_activeSelection);
+                m_activeSelection = null;
             }
         }
     }
