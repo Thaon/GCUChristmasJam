@@ -1042,6 +1042,8 @@ MonoBehaviour:
   - m_prefab: {fileID: 1337326874729500, guid: f4e483c9933d5cf48bd43b9337538d48, type: 2}
     m_price: 5
   m_selectedBuilding: -1
+  m_canPlace: {fileID: 2100000, guid: 072ff9ae1c2150447bfc1525b8f85b71, type: 2}
+  m_cannotPlace: {fileID: 2100000, guid: bf227dbe2d87ddf48a8f0286df81df98, type: 2}
 --- !u!114 &1087042191
 MonoBehaviour:
   m_ObjectHideFlags: 0
