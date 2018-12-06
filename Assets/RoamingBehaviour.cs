@@ -36,6 +36,9 @@ public class RoamingBehaviour : StateMachineBehaviour {
             timer = 0;
         }
 
+        
+
+
 	}
     
 
